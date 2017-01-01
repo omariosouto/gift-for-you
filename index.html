@@ -30,7 +30,7 @@
 		font-family: 'Oswald', sans-serif;
 		color: #FFF; 
 		font-size: calc(8vw);
-		text-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+		text-shadow: 0px 0px 8px rgba(0,0,0,0.6);
 		position: relative;
 		z-index: 80;
   }
@@ -39,7 +39,7 @@
 	color: #FFF;
 	font-size: ;
 	max-width: 80%;
-	text-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+	text-shadow: 0px 0px 8px rgba(0,0,0,0.6);
 	position: relative;
 	z-index: 80;
 }
@@ -47,16 +47,17 @@
 .nuvem-branca,
 .nuvem-preta {
 	position: absolute;
-	max-width: 35vw;
+	max-width: 45vw;
 	z-index: 6;
+	animation-iteration-count: infinite;
 }
 
 .nuvem-branca {
 	top: 0;
 	right: 10%;
 	animation-name: branca;
-	animation-duration: 8s;
-	animation-direction: reverse;
+	animation-duration: 12s;
+	animation-direction: alternate;
 }
 @keyframes branca {
     from {
@@ -70,10 +71,10 @@
 .nuvem-preta {
 	bottom: 10%;
 	left: 10%;
-	max-width: 30vw;
+	max-width: 40vw;
 	animation-name: preta;
-	animation-duration: 8s;
-	animation-direction: reverse;
+	animation-duration: 9s;
+	animation-direction: alternate;
 }
 @keyframes preta {
     from {
