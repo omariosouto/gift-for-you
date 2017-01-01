@@ -8,38 +8,130 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
 	<meta name="theme-color" content="#282828">
-	<style>
-* {
-	box-sizing: border-box;
-	font-family: sans-serif;
-	padding: 0;
-	margin: auto;
-}
-body {
-	overflow: hidden;
-}
-p {
+	<style>  body {
+		overflow-x: hidden;
+		background-color: #00acde;
+		min-height: 100vh;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+		justify-content: center;
+		align-items: center;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column; 
+  }
+  #contador {
+		font-weight: 800;
+		font-family: 'Oswald', sans-serif;
+		color: #FFF; 
+		font-size: calc(8vw);
+		text-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+		position: relative;
+		z-index: 80;
+  }
+.text {
 	text-align: center;
-	padding: 15px;
-	background-color: #181818;
-	color: white;
-	display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-	width: 100%;
-	height: 15vh;	
+	color: #FFF;
+	font-size: ;
+	max-width: 80%;
+	text-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+	position: relative;
+	z-index: 80;
 }
-iframe {
-	width: 100%;
-	height: 85vh;
+
+.nuvem-branca,
+.nuvem-preta {
+	position: absolute;
+	max-width: 35vw;
+	z-index: 6;
+}
+
+.nuvem-branca {
+	top: 0;
+	right: 10%;
+	animation-name: branca;
+	animation-duration: 8s;
+	animation-direction: reverse;
+}
+@keyframes branca {
+    from {
+			transform: scale(1) translateX(-30px);
+		}
+    to {
+			transform: scale(1.2) translateX(0px);
+		}
+}
+
+.nuvem-preta {
+	bottom: 10%;
+	left: 10%;
+	max-width: 30vw;
+	animation-name: preta;
+	animation-duration: 8s;
+	animation-direction: reverse;
+}
+@keyframes preta {
+    from {
+			transform: scale(1) translateY(-30px);
+		}
+    to {
+			transform: scale(1.3) translateY(0px);
+		}
 }
 	</style>
 </head>
 <body>
-	<p>Uma seleção pra fazer seu dia melhor ;D
-<br /> Ass: Amor <span class="love">❤</span></p>
-<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A225xihqkff533xewnpxmm4hma%3Aplaylist%3A6Oriaq3woOLfP44uB5uxxR" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-	<script> alert('Após muito pensar, uma recompensa chegará. \n Acesse seu Google Play livros!'); </script>
+
+<link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
+
+<span id="contador"></span>
+<p class="text">"Me apaixonei do mesmo jeito que alguém cai no sono: gradativamente e de repente, de uma hora para outra."</p>
+
+<svg class="nuvem-preta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 153"><path fill="#000000" d="M201.3 79.7c-.3-1-.3-2.3-.1-3.4.3-2.5 1-4.9 1.2-7.4.8-10.2-2.4-19.2-9.2-26.7-4.1-4.6-9.1-7.9-15.2-9-1.8-.3-3.7-.1-5.7-.1-.1-.4-.1-.6-.1-.7.1-4.4-1.5-8.2-4.1-11.6C159.6 9.5 146.9 5 133.2 8.4c-5.7 1.4-10.9 3.9-15.8 7-1.5 1-1.5.9-2.7-.3-3.4-3.4-7.1-6.4-11.2-8.7-7-3.9-14.4-5.5-22.3-3.6-6.8 1.6-12.6 4.9-17.6 9.7-1.3 1.3-2.6 1.8-4.5 1.8-4.1.1-8.3.1-12.4.7-6.4.9-12.4 3.3-17.1 8-8 8-10.7 17.9-9.6 29 .3 2.6.8 2.1-1.7 3.2C13 57.5 9.4 61.4 7 66.6c-2.5 5.3-3.5 10.8-3 16.5.6 7.4 3.1 14.2 7.9 20 3.6 4.4 8 7.5 13.5 9.2 1.1.3 1.4.8 1.2 1.9-.3 1.5-.4 2.9-.5 4.4-.7 6.4.8 12.1 4.7 17.2 2.5 3.2 5.6 5.5 9 7.6 4.8 2.8 9.8 4.8 15.3 5.3 9.7 1 18.7-1.2 27.1-6.1 6.9-4 12-9.7 15.9-16.6.5-.8.9-1.6 1.5-2.6.6.8 1 1.4 1.4 2 2.7 4.1 5.7 7.9 9.5 11.1 6.7 5.7 14.3 8.4 23.2 7 5.5-.9 10.5-3.2 15.2-6.2 6.2-4.1 11.8-9 16.7-14.6.4-.5 1.1-1 1.7-1 1.3-.1 2.6.1 3.9.2 4.9.4 9.8.2 14.6-1.1 8.1-2.1 14.3-6.6 16.7-15 .8-2.7 1.2-5.6 1.3-8.4.5-6.1-.7-12-2.5-17.7z"/></svg>
+
+<svg class="nuvem-branca" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 153"><path fill="#FFFFFF" d="M201.3 79.7c-.3-1-.3-2.3-.1-3.4.3-2.5 1-4.9 1.2-7.4.8-10.2-2.4-19.2-9.2-26.7-4.1-4.6-9.1-7.9-15.2-9-1.8-.3-3.7-.1-5.7-.1-.1-.4-.1-.6-.1-.7.1-4.4-1.5-8.2-4.1-11.6C159.6 9.5 146.9 5 133.2 8.4c-5.7 1.4-10.9 3.9-15.8 7-1.5 1-1.5.9-2.7-.3-3.4-3.4-7.1-6.4-11.2-8.7-7-3.9-14.4-5.5-22.3-3.6-6.8 1.6-12.6 4.9-17.6 9.7-1.3 1.3-2.6 1.8-4.5 1.8-4.1.1-8.3.1-12.4.7-6.4.9-12.4 3.3-17.1 8-8 8-10.7 17.9-9.6 29 .3 2.6.8 2.1-1.7 3.2C13 57.5 9.4 61.4 7 66.6c-2.5 5.3-3.5 10.8-3 16.5.6 7.4 3.1 14.2 7.9 20 3.6 4.4 8 7.5 13.5 9.2 1.1.3 1.4.8 1.2 1.9-.3 1.5-.4 2.9-.5 4.4-.7 6.4.8 12.1 4.7 17.2 2.5 3.2 5.6 5.5 9 7.6 4.8 2.8 9.8 4.8 15.3 5.3 9.7 1 18.7-1.2 27.1-6.1 6.9-4 12-9.7 15.9-16.6.5-.8.9-1.6 1.5-2.6.6.8 1 1.4 1.4 2 2.7 4.1 5.7 7.9 9.5 11.1 6.7 5.7 14.3 8.4 23.2 7 5.5-.9 10.5-3.2 15.2-6.2 6.2-4.1 11.8-9 16.7-14.6.4-.5 1.1-1 1.7-1 1.3-.1 2.6.1 3.9.2 4.9.4 9.8.2 14.6-1.1 8.1-2.1 14.3-6.6 16.7-15 .8-2.7 1.2-5.6 1.3-8.4.5-6.1-.7-12-2.5-17.7z"/></svg>
+
+<script>
+	var YY = 2017;
+	var MM = 01;
+	var DD = 08;
+	var HH = 00;
+	var MI = 00;
+	var SS = 00; 
+
+	function atualizaContador() {  
+    var hoje = new Date();  
+    var futuro = new Date(YY,MM-1,DD,HH,MI,SS);   
+    var ss = parseInt((futuro - hoje) / 1000);  
+    var mm = parseInt(ss / 60);
+    var hh = parseInt(mm / 60);  
+    console.log('Horas reais: ', hh);
+    var hhReal = hh;   
+    var dd = parseInt(hh / 24);   
+    ss = ss - (mm * 60);  
+    mm = mm - (hh * 60);  
+    hh = hh - (dd * 24);   
+    var faltam = '';  
+    faltam += (toString(hhReal).length) ? hhReal+' : ' : '';  
+    faltam += (toString(mm).length) ? mm+' : ' : '';  
+    faltam += ss+'';   
+
+    if (dd+hh+mm+ss > 0) {
+      document.getElementById('contador').innerHTML = faltam;	
+      setTimeout(atualizaContador,1000);  
+    } else {
+      document.getElementById('contador').innerHTML = 'CHEGOU!!!!';	
+      setTimeout(atualizaContador,1000);  
+    }
+	}
+
+	atualizaContador();
+</script>
+	
 </body>
 </html>
