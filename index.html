@@ -126,8 +126,10 @@
       document.getElementById('contador').innerHTML = faltam;	
       setTimeout(atualizaContador,1000);  
     } else {
-      document.getElementById('contador').innerHTML = 'CHEGOU!!!!';	
-      setTimeout(atualizaContador,1000);  
+      document.getElementById('contador').innerHTML = 'Pronto <3';	
+	  var timeoutRedirect = setTimeout(function() {
+        window.location = "https://mariosouto.com/gift-for-you/i-love-you/"
+	  }, 500)
     }
 	}
 
